@@ -11658,7 +11658,7 @@ a.text-dark:focus {
 
 .counters .vote,
 .counters .answer {
-  widht: 60px;
+  width: 60px;
   height: 60px;
 }
 
@@ -11678,5 +11678,9 @@ a.text-dark:focus {
 
 .counters .view {
   margin-top: 10px;
+}
+
+form.form-delete {
+  display: inline;
 }
 
