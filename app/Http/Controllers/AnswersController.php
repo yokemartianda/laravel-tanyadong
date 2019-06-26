@@ -54,7 +54,7 @@ class AnswersController extends Controller
 
         return redirect()->route('questions.show', $question->slug)->with('success', "Your answer has been updated.");
     }
-
+    
     /**
      * Remove the specified resource from storage.
      *
