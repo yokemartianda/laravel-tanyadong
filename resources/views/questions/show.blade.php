@@ -26,7 +26,9 @@
                                 @csrf
                                 <input type="hidden" name="vote" value="1">
                             </form>
+
                             <span class="votes-count">{{ $question->votes_count }}</span>
+
                             <a title="This question is not useful"
                             class="vote-down {{ Auth::guest() ? 'off' : '' }}"
                             onclick="event.preventDefault(); document.getElementById('down-vote-question-{{ $question->id }}').submit();">
@@ -48,12 +50,16 @@
                                     @method('DELETE')
                                 @endif
                             </form>
+
                             <span class="favorites-count">{{ $question->favorites_count }}</span>
+
                         </div>
                         <div class="media-body">
                             {!! $question->body_html !!}
                             <div class="float-right">
+
                                 <span class="text_muted">Answered {{ $question->created_date }}</span>
+                                
                                 <div class="media mt-2">
                                     <a href="{{ $question->user->url }}" class="pr-2">
                                         <img src="{{ $question->user->avatar }}">
