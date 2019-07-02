@@ -6,17 +6,17 @@
         <div class="media-body">
             <form v-if="editing" @submit.prevent="update">
                 <div class="form-group">
-                    <textarea rows="10" v-model="body" class="form-control"></textarea>
+                    <textarea rows="10" v-model="body" class="form-control" required></textarea>
                 </div>
-                <button @click.prevent="editing = false">Update</button>
-                <button @click.prevent="editing = false">Cancel</button>
+                <button class="btn btn-primary" :disabled="isInvalid">Update</button>
+                <button class="btn btn-outline-secondary" type="button" @click="cancel">Cancel</button>
             </form>
             <div v-else>
                 <div v-html="bodyHtml"></div>
                 <div class="row">
                     <div class="col-4">
                         @can('update', $answer)
-                        <a @click.prevent="editing = true" class="btn btn-outline-info btn-sm">Edit</a>
+                        <a @click.prevent="edit" class="btn btn-outline-info btn-sm">Edit</a>
                         @endcan
         
                         @can('delete', $answer)
