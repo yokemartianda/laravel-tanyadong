@@ -43,8 +43,6 @@
         "model" => $model
     ])
     @elseif ($model instanceof App\Question)
-    @include('shared._favorite', [
-        "model" => $model
-    ])
+    <favorite :question="{{ $model }}"></favorite>
     @endif
 </div>
