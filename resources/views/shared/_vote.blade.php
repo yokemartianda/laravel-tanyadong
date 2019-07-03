@@ -21,7 +21,7 @@
         onclick="event.preventDefault(); document.getElementById('up-vote-{{ $formID }}').submit();">
             <i class="fas fa-caret-up fa-3x"></i>
     </a>
-    <form id="up-vote-{{ $formID }}" action="/{{ $formAction }}/vote" method="POST" style="display:none;">
+    <form id="up-vote-{{ $formID }}" action="{{ $formAction }}" method="POST" style="display:none;">
         @csrf
             <input type="hidden" name="vote" value="1">
     </form>
@@ -33,15 +33,13 @@
         onclick="event.preventDefault(); document.getElementById('down-vote-{{ $formID }}').submit();">
             <i class="fas fa-caret-down fa-3x"></i>
     </a>
-    <form id="down-vote-{{ $formID }}" action="/{{ $formAction }}/vote" method="POST" style="display:none;">
+    <form id="down-vote-{{ $formID }}" action="{{ $formAction }}" method="POST" style="display:none;">
         @csrf
             <input type="hidden" name="vote" value="-1">
     </form>
 
     @if ($model instanceof App\Answer)
-    @include('shared._accept', [
-        "model" => $model
-    ])
+    <accept :answer="{{ $model }}"></accept>
     @elseif ($model instanceof App\Question)
     <favorite :question="{{ $model }}"></favorite>
     @endif
