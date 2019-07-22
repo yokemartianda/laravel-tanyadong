@@ -33,12 +33,7 @@
             </div>
         </div>
     </div>
-    @if ($question->answers_count > 0)
-        @include('answers._index', [
-            'answers' => $question->answers,
-            'answersCount' => $question->answers_count
-        ])
-    @endif
+     <answers :answers="{{ $question->answers }}" :count="{{ $question->answers_count }}"></answers>
     @include('answers._create')
 </div>
 @endsection
