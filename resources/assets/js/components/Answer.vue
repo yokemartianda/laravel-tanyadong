@@ -8,7 +8,7 @@
           <textarea rows="10" v-model="body" class="form-control" required></textarea>
         </div>
         <button class="btn btn-primary" :disabled="isInvalid">Update</button>
-        <button class="btn btn-outline-secondary" type="button" @click="cancel">Cancel</button>
+        <button class="btn btn-outline-secondary" type="button" @click="cancel">Batal</button>
       </form>
       <div v-else>
         <div v-html="bodyHtml"></div>
@@ -23,11 +23,11 @@
               v-if="authorize('modify', answer)"
               @click="destroy"
               class="btn btn-sm btn-outline-danger"
-            >Delete</button>
+            >Hapus</button>
           </div>
           <div class="col-4"></div>
           <div class="col-4">
-            <user-info :model="answer" label="Answered"></user-info>
+            <user-info :model="answer" label="Dijawab"></user-info>
           </div>
         </div>
       </div>
@@ -74,7 +74,7 @@ export default {
 
     delete() {
       axios.delete(this.endpoint).then(res => {
-        this.$toast.success(res.data.message, "Success", { timeout: 2000 });
+        this.$toast.success(res.data.message, "Sukses", { timeout: 2000 });
         this.$emit("deleted");
       });
     }

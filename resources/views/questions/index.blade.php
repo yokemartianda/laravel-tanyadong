@@ -7,9 +7,9 @@
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex align-items-center">
-                        <h2>All Questions</h2>
+                        <h2>Semua Pertanyaan</h2>
                         <div class="ml-auto">
-                            <a href="{{ route('questions.create')}}" class="btn btn-outline-secondary">Ask Question</a>
+                            <a href="{{ route('questions.create')}}" class="btn btn-outline-secondary">Mari Bertanya</a>
                         </div>
                     </div>
                 </div>
@@ -20,7 +20,7 @@
                         @include('questions._question')
                     @empty
                         <div class="alert alert-warning">
-                            <strong>Sorry, there are no question available.</strong>
+                            <strong>Wah belum ada yang bertanya nih!</strong>
                         </div>
                     @endforelse
 

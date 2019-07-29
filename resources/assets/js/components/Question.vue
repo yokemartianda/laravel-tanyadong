@@ -13,7 +13,7 @@
                 <textarea rows="10" v-model="body" class="form-control" required></textarea>
               </div>
               <button class="btn btn-primary" :disabled="isInvalid">Update</button>
-              <button class="btn btn-outline-secondary" type="button" @click="cancel">Cancel</button>
+              <button class="btn btn-outline-secondary" type="button" @click="cancel">Batal</button>
             </div>
           </div>
         </form>
@@ -22,7 +22,7 @@
             <div class="d-flex align-items-center">
               <h1>{{ title }}</h1>
               <div class="ml-auto">
-                <a href="/questions" class="btn btn-outline-secondary">Back To All Questions</a>
+                <a href="/questions" class="btn btn-outline-secondary">Kembali Ke Semua Pertanyaan</a>
               </div>
             </div>
           </div>
@@ -44,12 +44,12 @@
                       v-if="authorize('deleteQuestion', question)"
                       @click="destroy"
                       class="btn btn-sm btn-outline-danger"
-                    >Delete</button>
+                    >Hapus</button>
                   </div>
                 </div>
                 <div class="col-4"></div>
                 <div class="col-4">
-                  <user-info :model="question" label="Asked"></user-info>
+                  <user-info :model="question" label="Ditanyakan"></user-info>
                 </div>
               </div>
             </div>
@@ -114,7 +114,7 @@ export default {
 
     delete() {
       axios.delete(this.endpoint).then(({ data }) => {
-        this.$toast.success(data.message, "Success", { timeout: 2000 });
+        this.$toast.success(data.message, "Sukses", { timeout: 2000 });
       });
       setTimeout(() => {
         window.location.href = "/questions";

@@ -30,7 +30,7 @@
             </div>
         </div>
         <p class="lead">
-            Asked by
+            Ditanyakan oleh
             <a href="{{$question->user->url}}">{{$question->user->name}}</a>
             <small class="text-muted">{{$question->created_date}}</small>
         </p>

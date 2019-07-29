@@ -5,7 +5,7 @@
         <div class="card">
           <div class="card-body">
             <div class="card-title">
-              <h2>{{ title }}</h2>
+              <h2>Jawaban</h2>
             </div>
 
             <answer
@@ -19,7 +19,7 @@
               <button
                 @click.prevent="fetch(nextUrl)"
                 class="btn btn-outline-secondary"
-              >Load more answers</button>
+              >Muat lebih banyak</button>
             </div>
           </div>
         </div>

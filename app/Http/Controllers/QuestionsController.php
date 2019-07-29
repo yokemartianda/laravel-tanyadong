@@ -48,7 +48,7 @@ class QuestionsController extends Controller
     {
         $request->user()->questions()->create($request->only('title', 'body'));
 
-        return redirect()->route('questions.index')->with('success', "Your question has been submitted");
+        return redirect()->route('questions.index')->with('success', "Yeay! Anda sudah membuat pertanyaan");
     }
 
     /**
@@ -93,12 +93,12 @@ class QuestionsController extends Controller
         if(request()->expectsJson())
         {
             return response()->json([
-                'message' => "Your question has been updated.",
+                'message' => "Pertanyaan anda sudah diperbarui.",
                 'body_html' => $question->body_html
             ]);
         }
 
-        return redirect()->route('questions.index')->with('success', "Your question has been updated.");
+        return redirect()->route('questions.index')->with('success', "Pertanyaan anda sudah diperbarui.");
     }
 
     /**
@@ -116,10 +116,10 @@ class QuestionsController extends Controller
         if (request()->expectsJson())
         {
             return response()->json([
-                'message' => "Your question has been deleted."
+                'message' => "Pertanyaan anda sudah dihapus."
             ]);
         }
 
-        return redirect()->route('questions.index')->with('success', "Your question has been deleted.");
+        return redirect()->route('questions.index')->with('success', "Pertanyaan anda sudah dihapus.");
     }
 }

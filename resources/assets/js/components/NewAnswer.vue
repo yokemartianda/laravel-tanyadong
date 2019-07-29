@@ -4,7 +4,7 @@
       <div class="card">
         <div class="card-body">
           <div class="card-title">
-            <h3>Your Answer</h3>
+            <h3>Jawab Pertanyaan Ini</h3>
           </div>
           <form @submit.prevent="create">
             <div class="form-group">
@@ -15,7 +15,7 @@
                 type="submit"
                 :disabled="isInvalid"
                 class="btn btn-lg btn-outline-primary"
-              >Submit</button>
+              >Jawab</button>
             </div>
           </form>
         </div>

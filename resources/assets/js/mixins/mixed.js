@@ -33,7 +33,7 @@ export default {
                     data
                 }) => {
                     this.bodyHtml = data.body_html;
-                    this.$toast.success(data.message, "Success", {
+                    this.$toast.success(data.message, "Sukses", {
                         timeout: 3000
                     });
                     this.editing = false;
@@ -43,7 +43,7 @@ export default {
         payload() {},
 
         destroy() {
-            this.$toast.question("Are you sure about that?", "Confirm", {
+            this.$toast.question("Apakah anda yakin?", "Konfirmasi", {
                 timeout: 20000,
                 close: false,
                 overlay: true,
@@ -54,7 +54,7 @@ export default {
                 position: "center",
                 buttons: [
                     [
-                        "<button><b>YES</b></button>",
+                        "<button><b>YA</b></button>",
                         (instance, toast) => {
                             this.delete();
                             instance.hide({
@@ -64,7 +64,7 @@ export default {
                         true
                     ],
                     [
-                        "<button>NO</button>",
+                        "<button>TIDAK</button>",
                         function (instance, toast) {
                             instance.hide({
                                 transitionOut: "fadeOut"

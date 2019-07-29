@@ -33,12 +33,12 @@ class AnswersController extends Controller
         if ($request->expectsJson())
         {
             return response()->json([
-                'message' => "Your answer has been submitted successfully.",
+                'message' => "Terima kasih sudah menjawab pertanyaan ini.",
                 'answer' => $answer->load('user')
             ]);
         }
 
-        return back()->with('success', "Your answer has been submitted successfully.");
+        return back()->with('success', "Terima kasih sudah menjawab pertanyaan ini.");
     }
 
     /**
@@ -70,11 +70,11 @@ class AnswersController extends Controller
         ]));
 
         return response()->json([
-            'message' => 'Your answer has been updated',
+            'message' => 'Jawaban anda sudah diperbarui.',
             'body_html' => $answer->body_html
         ]);
 
-        // return redirect()->route('questions.show', $question->slug)->with('success', "Your answer has been updated.");
+        return redirect()->route('questions.show', $question->slug)->with('success', "Jawaban anda sudah diperbarui.");
     }
     
     /**
@@ -90,10 +90,10 @@ class AnswersController extends Controller
 
         if(request()->expectsJson()) {
             return response()->json([
-                'message' => "Your answer has been deleted."
+                'message' => "Jawaban anda sudah dihapus."
             ]);
         }
 
-        return back()->with('success', "Your answer has been deleted.");
+        return back()->with('success', "Jawaban anda sudah dihapus.");
     }
 }

@@ -18,7 +18,7 @@ export default {
 
   computed: {
     postDate() {
-      return this.label + " " + this.model.created_date + " by";
+      return this.label + " " + this.model.created_date + " oleh";
     }
   },
 

@@ -1,6 +1,6 @@
 <template>
   <a
-    title="Click to mark as favorite question (Click again to undo)"
+    title="Klik untuk menandai sebagai favorite (Klik kembali untuk membatalkan)"
     :class="classes"
     @click.prevent="toggle"
   >
@@ -36,7 +36,7 @@ export default {
     toggle() {
       if (!this.signedIn) {
         this.$toast.warning(
-          "Please login to favorite this question",
+          "Mohon login untuk memfavoritkan pertanyaan ini",
           "Warning",
           {
             timeout: 3000,

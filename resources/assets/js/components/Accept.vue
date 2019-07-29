@@ -2,7 +2,7 @@
   <div>
     <a
       v-if="canAccept"
-      title="Mark this answer as best answer"
+      title="Tandai jawaban ini sebagai jawaban terbaik"
       :class="classes"
       @click.prevent="create"
     >
@@ -11,7 +11,7 @@
 
     <a
       v-if="accepted"
-      title="The question owner accepted this answer as best answer"
+      title="Telah ditandai sebagai jawaban terbaik oleh pemilik pertanyaan"
       :class="classes"
     >
       <i class="fas fa-check fa-2x"></i>
@@ -40,7 +40,7 @@ export default {
   methods: {
     create() {
       axios.post(`/answers/${this.id}/accept`).then(res => {
-        this.$toast.success(res.data.message, "Success", {
+        this.$toast.success(res.data.message, "Sukses", {
           timeout: 3000,
           position: "bottomLeft"
         });

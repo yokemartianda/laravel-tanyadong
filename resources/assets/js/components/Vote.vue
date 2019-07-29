@@ -47,8 +47,14 @@ export default {
   methods: {
     title(voteType) {
       let titles = {
-        up: `This ${this.name} is useful`,
-        down: `This ${this.name} is not useful`
+        up:
+          this.name == "answer"
+            ? "Jawaban ini membantu"
+            : "Pertanyaan ini membantu",
+        down:
+          this.name == "answer"
+            ? "Jawaban ini tidak membantu"
+            : "Pertanyaan ini tidak membantu"
       };
 
       return titles[voteType];
