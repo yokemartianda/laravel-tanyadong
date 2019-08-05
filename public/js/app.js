@@ -60787,7 +60787,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var _this = this;
 
       if (!this.signedIn) {
-        this.$toast.warning("Please login to vote the " + this.name, "Warning", {
+        this.$toast.warning("Mohon login untuk vote " + this.name, "Warning", {
           timeout: 3000,
           position: "bottomLeft"
         });
@@ -60795,7 +60795,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return;
       }
       axios.post(this.endpoint, { vote: vote }).then(function (res) {
-        _this.$toast.success(res.data.message, "Success", {
+        _this.$toast.success(res.data.message, "Sukses", {
           timeout: 3000,
           position: "bottomLeft"
         });
@@ -62004,7 +62004,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }).then(function (_ref) {
         var data = _ref.data;
 
-        _this.$toast.success(data.message, "Success");
+        _this.$toast.success(data.message, "Sukses");
         _this.body = "";
         _this.$emit("created", data.answer);
       });
